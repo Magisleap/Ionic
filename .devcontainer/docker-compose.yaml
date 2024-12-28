@@ -1,0 +1,15 @@
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - node_modules:/home/vscode/app/node_modules
+      - ../:/home/vscode/app:cached
+    ports:
+      - 5173:5173
+    tty: true
+    stdin_open: true
+
+volumes:
+  node_modules:
